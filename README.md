@@ -1,6 +1,6 @@
 # Ortus CommandBox + Adobe CF2018 Addons in Docker
 
-Trying to get CommandBox and the Adobe Addons service running in Docker so I can use cfhtmltopdf.
+This is an example of using the CommandBox Docker image along with Adobe's Addons Docker image to allow use of cfhtmltopdf. 
 
 ## Setup
 
@@ -23,6 +23,7 @@ CFAdmin login is admin / password.
 
 
 ## Notes
+
 The "profile": "development" in server.json allows access to CFAdmin.
 
 See the myconfig.json used by CFConfig to configure the server and in particular the PDFServiceManagers section.
