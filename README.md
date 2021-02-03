@@ -6,7 +6,7 @@ Trying to get CommandBox and the Adobe Addons service running in Docker so I can
 
 First build: docker-compose build --no-cache
 
-This will run Dockerfile which will copy the updaed .prikey to the CommandBox image. 
+This will run Dockerfile which will copy the updated .prikey to the CommandBox image. 
 The .prikey is used by ColdFusion to authenticate the PDFg engine.
 Apparently some CommandBox images have the wrong key.
 
