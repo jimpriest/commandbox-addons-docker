@@ -1,0 +1,40 @@
+version: '3'
+
+services:
+  cfml:
+    container_name: cfml
+    build:
+     context: ./cfml
+     dockerfile: Dockerfile
+    image: cfml
+    environment:
+      cfconfig_adminPassword: password
+      cfconfigfile: myconfig.json
+    healthcheck:
+      test: curl -f http://cfml:8080/
+      interval: 1m
+      timeout: 3s
+    depends_on:
+        - addons
+    networks:
+      local:
+    ports:
+      - "80:8080"
+    volumes:
+      - /Users/jpriest/www/commandbox-addons-docker/app:/app
+
+  addons:
+    container_name: addons
+    image: eaps-docker-coldfusion.bintray.io/cf/addons:latest-2018
+    environment:
+      - acceptEULA=YES
+    ports:
+      - "8991:8991"
+    networks:
+      local:
+
+networks:
+  local:
+    driver: bridge
+
+
